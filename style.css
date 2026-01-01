@@ -16,11 +16,15 @@
 }
 
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Plus Jakarta Sans", "Inter", sans-serif;
   background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%);
   color: var(--text);
   line-height: 1.6;
   overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, .logo, .section-title {
+  font-family: "Outfit", sans-serif;
 }
 
 .container {
@@ -117,6 +121,8 @@ nav {
 }
 
 nav .container {
+  max-width: 100%;
+  padding: 0 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -384,7 +390,7 @@ nav a:hover::after {
 
 /* Section Styles */
 section {
-  padding: 100px 0;
+  padding: 60px 0;
 }
 
 .section-title {
@@ -867,8 +873,53 @@ footer {
   }
 
   .hero-content {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 40px;
+    align-items: center;
+  }
+
+  /* Unwrap containers, similar to mobile view */
+  .hero-text,
+  .hero-visual {
+    display: contents;
+  }
+
+  /* Reordering elements for Tablet */
+  .profile-picture-section {
+    order: 1;
+    width: 100%;
+  }
+
+  .hero-text h1 {
+    order: 2;
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-text h2 {
+    order: 3;
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-text p {
+    order: 4;
+    width: 100%;
+    text-align: center;
+  }
+
+  .code-window {
+    order: 5;
+    width: 100%;
+    margin-bottom: 30px;
+    text-align: left;
+  }
+
+  .cta-buttons {
+    order: 6;
+    width: 100%;
+    justify-content: center;
   }
 
   .hero-text h1 {
@@ -993,6 +1044,10 @@ footer {
     padding: 14px 0;
   }
 
+  nav .container {
+    padding: 0 14px;
+  }
+
   .logo {
     font-size: 18px;
   }
@@ -1009,18 +1064,53 @@ footer {
   }
 
   .hero-content {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 30px;
+    align-items: center;
   }
 
-  /* Move hero-visual (profile picture) to top */
+  /* Unwrap containers to reorder children individually */
+  .hero-text,
   .hero-visual {
-    order: -1;
+    display: contents;
   }
 
-  .hero-text {
+  /* Reordering elements */
+  .profile-picture-section {
     order: 1;
+    width: 100%;
+  }
+
+  .hero-text h1 {
+    order: 2;
+    width: 100%;
     text-align: center;
+  }
+
+  .hero-text h2 {
+    order: 3;
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-text p {
+    order: 4;
+    width: 100%;
+    text-align: center;
+  }
+
+  .code-window {
+    order: 5;
+    width: 100%;
+    margin-bottom: 24px;
+    text-align: left;
+  }
+
+  .cta-buttons {
+    order: 6;
+    width: 100%;
+    justify-content: center;
   }
 
   .hero-text h1 {
@@ -1217,6 +1307,10 @@ footer {
   /* Navigation */
   nav {
     padding: 12px 0;
+  }
+
+  nav .container {
+    padding: 0 12px;
   }
 
   .logo {
@@ -1441,6 +1535,10 @@ footer {
   /* Navigation */
   nav {
     padding: 10px 0;
+  }
+
+  nav .container {
+    padding: 0 10px;
   }
 
   .logo {
